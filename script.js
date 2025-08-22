@@ -264,14 +264,14 @@ function openModal(code){
 
         const sec1 = document.createElement("section");
         sec1.className = "section";
-        sec1.innerHTML = `<h3>Gesetzlich anerkannte Feiertage</h3>`;
+        sec1.innerHTML = `<h3>Lokale Feiertage</h3>`;
         sec1.appendChild(fmtList(legal));
         elColumns.appendChild(sec1);
 
         if(treated.length > 0){
             const sec2 = document.createElement("section");
             sec2.className = "section";
-            sec2.innerHTML = `<h3>Tage, die wie gesetzliche Feiertage gelten</h3>`;
+            sec2.innerHTML = `<h3>Sonstige Feiertage</h3>`;
             sec2.appendChild(fmtList(treated));
             if(canton.notes){
                 const p = document.createElement("p");
