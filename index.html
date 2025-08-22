@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feiertage – Übersicht</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-title">
+      <img src="workingFlow_Logo.jpeg" alt="Firmenlogo" class="logo-img">
+      <div class="title-group">
+        <h1>Feiertage</h1>
+        <p>Gesetzlich anerkannte Feiertage</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section id="cantons" class="grid"></section>
+</main>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal-header">
+      <img id="modalCoa" class="coa" alt="" />
+      <div class="modal-titles">
+        <h2 id="modalTitle"></h2>
+        <p class="muted">Feiertage - Jahresansicht</p>
+      </div>
+      <button id="closeBtn" class="btn ghost" data-close aria-label="schliessen">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="modal-controls">
+      <label for="year">Jahr:</label>
+      <select id="year"></select>
+      <button id="downloadIcs" class="btn primary" type="button">Kalender (.ics) herunterladen</button>
+    </div>
+
+    <div id="modalColumns" class="modal-columns"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-links">
+    <a class="footer-link" href="impressum.html">Impressum</a>
+    <span class="dot" aria-hidden="true">•</span>
+    <a class="footer-link" href="datenschutz.html">Datenschutzerklärung</a>
+  </nav>
+  <div class="footer-contact">
+    <a class="footer-link" href="https://www.workingflow.ch" target="_blank" rel="noopener">www.workingflow.ch</a>
+    <span class="dot" aria-hidden="true">•</span>
+    <a class="footer-link" href="mailto:mail@workingflow.ch">mail@workingflow.ch</a>
+    <span class="dot" aria-hidden="true">•</span>
+    <a class="footer-link" href="tel:+41442404422">+41 44 240 44 22</a>
+  </div>
+  <div class="footer-copy">
+    © <span id="footerYear"></span> workingFlow GmbH. Alle Rechte vorbehalten.
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
