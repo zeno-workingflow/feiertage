@@ -46,9 +46,7 @@ const LOCAL_BY_CANTON = {
     ZG: []
 };
 
-/* ========================
-   Hilfsfunktionen
-======================== */
+
 function easterSunday(y) {
     const a = y % 19, b = Math.floor(y / 100), c = y % 100;
     const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
@@ -71,9 +69,7 @@ function toSpan(v) {
     return null;
 }
 
-/* ========================
-   Lokale Regeln
-======================== */
+
 function thirdMondayOfApril(y) {
     const d = new Date(Date.UTC(y, 3, 1));
     let c = 0;
@@ -122,9 +118,7 @@ function bettagsmontagRegional(y) {
 }
 function gallustag(y) { return new Date(Date.UTC(y, 9, 16)); }
 
-/* ========================
-   Regeln & Pro-Kanton-Liste
-======================== */
+
 const RULES = {
     "Neujahr": y => new Date(Date.UTC(y, 0, 1)),
     "Berchtoldstag": y => new Date(Date.UTC(y, 0, 2)),
@@ -193,9 +187,7 @@ const LEGAL_BY_CANTON = {
     ZH: ["Neujahr","Karfreitag","Ostermontag","Tag der Arbeit","Auffahrt","Pfingstmontag","Nationalfeiertag Schweiz","Weihnachten","Stephanstag"]
 };
 
-/* ========================
-   Render-Helfer
-======================== */
+
 function yearsRange() {
     const y = new Date().getUTCFullYear();
     return Array.from({ length: 9 }, (_, i) => y + i);
@@ -227,9 +219,7 @@ function fmtList(items) {
     return ul;
 }
 
-/* ========================
-   ICS Utilities
-======================== */
+
 function pad(n) { return String(n).padStart(2, "0"); }
 function yyyymmdd(d) { return d.getUTCFullYear() + pad(d.getUTCMonth() + 1) + pad(d.getUTCDate()); }
 function timestampUTC() {
@@ -289,9 +279,7 @@ function downloadIcsFile(filename, content) {
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 0);
 }
 
-/* ========================
-   Datenaufbereitung
-======================== */
+
 function computeHolidayLists(canton, year) {
     const legalNames = LEGAL_BY_CANTON[canton.code] || [];
     const localNames = LOCAL_BY_CANTON[canton.code] || [];
@@ -317,9 +305,7 @@ function computeHolidayLists(canton, year) {
     return { legal, local };
 }
 
-/* ========================
-   Layout-Helper
-======================== */
+
 function applyResponsiveColumns(container) {
     const isMobile = window.innerWidth < 768;
     container.style.display = "grid";
@@ -327,9 +313,7 @@ function applyResponsiveColumns(container) {
     container.style.gap = "20px";
 }
 
-/* ========================
-   Bind .ics Button
-======================== */
+
 function bindIcs(canton, year, legal, local) {
     const btn = document.getElementById("downloadIcs");
     if (!btn) return;
@@ -341,9 +325,7 @@ function bindIcs(canton, year, legal, local) {
     };
 }
 
-/* ========================
-   Init: DOM Events
-======================== */
+
 document.addEventListener("DOMContentLoaded", function () {
     const elList = document.getElementById("cantons");
     const modal = document.getElementById("modal");

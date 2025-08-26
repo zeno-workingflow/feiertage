@@ -53,10 +53,10 @@ body.no-scroll{ overflow:hidden; }
 .card .coa {
     width: 74px;
     height: 74px;
-    object-fit: contain;        /* nie abgeschnitten */
-    object-position: center;    /* mittig platzieren */
+    object-fit: contain;
+    object-position: center;
     background: var(--white);
-    padding: 8px;               /* Luft um das Wappen */
+    padding: 8px;
     border-radius: 14px;
     border: 1px solid var(--border);
 }
