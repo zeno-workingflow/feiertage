@@ -4,17 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Feiertage – Übersicht</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href='public/images/favicon.png'>
+  <link rel="stylesheet" href='assets/styles.css' />
+  <link rel="stylesheet" href='assets/wf-header-footer.css'>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-title">
-      <img src="workingFlow_Logo.jpeg" alt="Firmenlogo" class="logo-img">
-      <div class="title-group">
-        <h1>Feiertage</h1>
-        <p>Gesetzliche und lokale Feiertage</p>
+<header class="wf-header wf-font">
+  <div class="wf-header-container">
+    <div class="wf-header-content">
+      <div class="wf-logos">
+        <a href="/" class="wf-main-logo" aria-label="workingFlow GmbH Startseite">
+          <img src='public/images/workingFlow.svg' alt="workingFlow GmbH">
+        </a>
+        <div class="wf-apple-logo">
+          <a href="/" class="wf-apple-link" aria-label="Apple Consultants">
+            <img src='public/images/appleconsultants.svg' alt="Apple Consultants">
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -52,24 +58,42 @@
   </div>
 </div>
 
-<footer class="site-footer">
-  <nav class="footer-links">
-    <a class="footer-link" href="impressum.html">Impressum</a>
-    <span class="dot" aria-hidden="true">•</span>
-    <a class="footer-link" href="datenschutz.html">Datenschutzerklärung</a>
-  </nav>
-  <div class="footer-contact">
-    <a class="footer-link" href="https://www.workingflow.ch" target="_blank" rel="noopener">www.workingflow.ch</a>
-    <span class="dot" aria-hidden="true">•</span>
-    <a class="footer-link" href="mailto:mail@workingflow.ch">mail@workingflow.ch</a>
-    <span class="dot" aria-hidden="true">•</span>
-    <a class="footer-link" href="tel:+41442404422">+41 44 240 44 22</a>
-  </div>
-  <div class="footer-copy">
-    © <span id="footerYear"></span> workingFlow GmbH. Alle Rechte vorbehalten.
+<footer class="wf-footer wf-font">
+  <div class="wf-footer-container">
+    <div class="wf-footer-content">
+
+      <!-- Logo Column -->
+      <div class="wf-footer-section">
+        <div class="wf-footer-logo">
+          <img src='public/images/workingFlow.svg' alt="workingFlow GmbH">
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="wf-footer-section">
+        <h3>workingFlow GmbH</h3>
+        <p>Hertistrasse 25</p>
+        <p>CH-8304 Wallisellen</p>
+        <div style="margin-top: 6px;">
+          <p><a href="tel:+41442404422" class="wf-footer-contact-link">+41 44 240 44 22</a></p>
+          <p><a href="mailto:mail@workingflow.ch" class="wf-footer-contact-link">mail@workingflow.ch</a></p>
+        </div>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="wf-footer-section">
+        <a href="https://workingflow.ch/agb" class="wf-footer-link">AGB</a>
+        <a href="https://workingflow.ch/impressum" class="wf-footer-link">Impressum</a>
+        <a href="https://workingflow.ch/datenschutzerklaerung" class="wf-footer-link">Datenschutz</a>
+        <div class="wf-footer-copyright">
+          © <span id="wfFooterYear"></span> workingFlow GmbH
+        </div>
+      </div>
+
+    </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src='assets/script.js'></script>
 </body>
 </html>

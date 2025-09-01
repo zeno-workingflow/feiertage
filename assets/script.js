@@ -422,4 +422,9 @@ document.addEventListener("DOMContentLoaded", function () {
     renderList();
     const fy = document.getElementById("footerYear");
     if (fy) fy.textContent = new Date().getFullYear();
+
+    (function(){
+        var el = document.getElementById('wfFooterYear');
+        if(el) el.textContent = new Date().getFullYear();
+    })();
 });
