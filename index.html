@@ -4,96 +4,106 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Feiertage – Übersicht</title>
-  <link rel="icon" type="image/png" href='public/images/favicon.png'>
-  <link rel="stylesheet" href='assets/styles.css' />
-  <link rel="stylesheet" href='assets/wf-header-footer.css'>
+
+  <link rel="icon" type="image/png" href="public/images/favicon.png">
+
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/wf-header-footer.css">
 </head>
-<body>
-<header class="wf-header wf-font">
-  <div class="wf-header-container">
-    <div class="wf-header-content">
-      <div class="wf-logos">
-        <a href="https://workingflow.ch" class="wf-main-logo" aria-label="workingFlow GmbH Startseite">
-          <img src='public/images/workingFlow.svg' alt="workingFlow GmbH">
-        </a>
-        <div class="wf-apple-logo">
-          <a href="https://workingflow.ch" class="wf-apple-link" aria-label="Apple Consultants">
-            <img src='public/images/appleconsultants.svg' alt="Apple Consultants">
+<body class="wf-font">
+
+<div class="layout">
+  <header class="wf-header wf-font">
+    <div class="wf-header-container">
+      <div class="wf-header-content">
+        <div class="wf-logos">
+          <a href="https://workingflow.ch" class="wf-main-logo" aria-label="workingFlow GmbH Startseite">
+            <img src="public/images/workingFlow.svg" alt="workingFlow GmbH">
           </a>
+          <div class="wf-apple-logo">
+            <a href="https://workingflow.ch" class="wf-apple-link" aria-label="Apple Consultants">
+              <img src="public/images/appleconsultants.svg" alt="Apple Consultants">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section id="cantons" class="grid"></section>
-</main>
 
-<div id="modal" class="modal" aria-hidden="true">
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <header class="modal-header">
-      <img id="modalCoa" class="coa" alt="" />
-      <div class="modal-titles">
-        <h2 id="modalTitle"></h2>
-        <p class="muted">Feiertage - Jahresansicht</p>
+  <main class="layout-main">
+    <section class="container">
+      <section id="cantons" class="grid"></section>
+    </section>
+  </main>
+
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal-header">
+        <img id="modalCoa" class="coa" alt="" />
+        <div class="modal-titles">
+          <h2 id="modalTitle"></h2>
+          <p class="muted">Feiertage - Jahresansicht</p>
+        </div>
+        <button id="closeBtn" class="btn ghost" data-close aria-label="schliessen">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="modal-content">
+        <div class="modal-controls">
+          <label for="year">Jahr:</label>
+          <select id="year"></select>
+          <button id="downloadIcs" class="btn primary" type="button">Kalender herunterladen</button>
+        </div>
+
+        <div id="modalColumns" class="modal-columns"></div>
       </div>
-      <button id="closeBtn" class="btn ghost" data-close aria-label="schliessen">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </header>
-
-    <div class="modal-content">
-      <div class="modal-controls">
-        <label for="year">Jahr:</label>
-        <select id="year"></select>
-        <button id="downloadIcs" class="btn primary" type="button">Kalender herunterladen</button>
-      </div>
-
-      <div id="modalColumns" class="modal-columns"></div>
     </div>
   </div>
+
+
+  <footer class="wf-footer wf-font">
+    <div class="wf-footer-container">
+      <div class="wf-footer-content">
+
+
+        <div class="wf-footer-section">
+          <div class="wf-footer-logo">
+            <img src="public/images/workingFlow.svg" alt="workingFlow GmbH">
+          </div>
+        </div>
+
+
+        <div class="wf-footer-section">
+          <h3>workingFlow GmbH</h3>
+          <p>Hertistrasse 25</p>
+          <p>CH-8304 Wallisellen</p>
+          <div style="margin-top: 6px;">
+            <p><a href="tel:+41442404422" class="wf-footer-contact-link">+41 44 240 44 22</a></p>
+            <p><a href="mailto:mail@workingflow.ch" class="wf-footer-contact-link">mail@workingflow.ch</a></p>
+          </div>
+        </div>
+
+
+        <div class="wf-footer-section">
+          <a href="https://workingflow.ch/agb" class="wf-footer-link">AGB</a>
+          <a href="https://workingflow.ch/impressum" class="wf-footer-link">Impressum</a>
+          <a href="https://workingflow.ch/datenschutzerklaerung" class="wf-footer-link">Datenschutz</a>
+          <div class="wf-footer-copyright">
+            © <span id="wfFooterYear"></span> workingFlow GmbH
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
 </div>
 
-<footer class="wf-footer wf-font">
-  <div class="wf-footer-container">
-    <div class="wf-footer-content">
-
-      <!-- Logo Column -->
-      <div class="wf-footer-section">
-        <div class="wf-footer-logo">
-          <img src='public/images/workingFlow.svg' alt="workingFlow GmbH">
-        </div>
-      </div>
-
-      <!-- Contact Information -->
-      <div class="wf-footer-section">
-        <h3>workingFlow GmbH</h3>
-        <p>Hertistrasse 25</p>
-        <p>CH-8304 Wallisellen</p>
-        <div style="margin-top: 6px;">
-          <p><a href="tel:+41442404422" class="wf-footer-contact-link">+41 44 240 44 22</a></p>
-          <p><a href="mailto:mail@workingflow.ch" class="wf-footer-contact-link">mail@workingflow.ch</a></p>
-        </div>
-      </div>
-
-      <!-- Legal Links -->
-      <div class="wf-footer-section">
-        <a href="https://workingflow.ch/agb" class="wf-footer-link">AGB</a>
-        <a href="https://workingflow.ch/impressum" class="wf-footer-link">Impressum</a>
-        <a href="https://workingflow.ch/datenschutzerklaerung" class="wf-footer-link">Datenschutz</a>
-        <div class="wf-footer-copyright">
-          © <span id="wfFooterYear"></span> workingFlow GmbH
-        </div>
-      </div>
-
-    </div>
-  </div>
-</footer>
-
-<script src='assets/script.js'></script>
+<script src="/assets/script.js"></script>
 </body>
 </html>
